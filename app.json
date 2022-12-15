@@ -1,13 +1,29 @@
 {
   "expo": {
-    "name": "cityGo",
-    "slug": "cityGo",
+    "name": "City Go",
+    "slug": "citygo-dev",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/notificationIcon.png",
     "userInterfaceStyle": "light",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to display on your profile."
+        }
+
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notificationIcon.png",
+          "color": "#ffffff"
+        }
+      ]
+    ],
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo_sp1.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,16 +34,43 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "icon": "./assets/notificationIcon.png",
+
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lunatech.CityGo",
+      "config": {
+        "googleMapsApiKey": "AIzaSyBSXECJBiw1cTjkx0kxV_1ReIlV1DlRVL8"
+      }
     },
     "android": {
+      "icon": "./assets/notificationIcon.png",
+      "adaptiveIcon": {
+        "foregroundImage":"./assets/notificationIcon.png",
+        "monochromeImage": "./assets/notificationIcon.png"
+      },
+      "package": "com.lunatech.CityGo",
+      "googleServicesFile": "./google-services.json",
+      "useNextNotificationsApi": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBSXECJBiw1cTjkx0kxV_1ReIlV1DlRVL8"
+        }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b24e508c-b0cc-4b0e-8073-9ac500ef68ed"
+      }
     }
   }
 }
