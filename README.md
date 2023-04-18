@@ -2,7 +2,7 @@
 
 CITY GO is a ride-hailing app that allows users to book rides, view ride history, chat with drivers, and more. The app is built using Expo and React Native for the front-end, and Python for the back-end.
 
-![City Go Screenshots](assets/images/CityGOmainSS.png)
+![City Go Screenshots](assets/img/CityGOmainSS.png)
 
 ## Table of Contents
 
