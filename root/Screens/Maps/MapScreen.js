@@ -278,22 +278,7 @@ export default function MapScreen(props) {
             <Pin address={address}/>
             <CurrentLocation address={address} onPress={()=>{ getCurrentLocation()}}/>
             <DoneButton onPress={()=>{
-                if (PickUpDropOffData.PickUpDropOffData.isPickUp) {
-                    let Copy  = PickUpDropOffData.PickUpDropOffData;
-                    Copy.PickUpData.Address = address;
-                    Copy.PickUpData.latitude = mapRegion.latitude;
-                    Copy.PickUpData.longitude = mapRegion.longitude;
-                    PickUpDropOffData.UpdateData(Copy);
 
-
-                } else {
-                    let Copy  = PickUpDropOffData.PickUpDropOffData;
-                    Copy.DropOffData.Address = address;
-                    Copy.DropOffData.latitude = mapRegion.latitude;
-                    Copy.DropOffData.longitude = mapRegion.longitude;
-                    PickUpDropOffData.UpdateData(Copy);
-
-                }
                 props.navigation.goBack()
 
             }}/>

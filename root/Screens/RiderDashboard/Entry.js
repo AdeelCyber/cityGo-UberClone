@@ -14,7 +14,7 @@ import ChangePhone from "../Settings/ChangePhone";
 import Dashboard from "../DriverDashboard/Dashboard";
 import ChangeCity from "../Settings/ChangeCity";
 import RiderMap from "./RiderMap";
-import MapScreen from "./MapScreen";
+import MapScreen from "../../../../../DonnwellUser/root/Screens/Maps/MapScreen";
 import GooglePlacesInput from "../../Components/User/GooglePlaceInput";
 import PickUpDropOffProvider from "../../Context/PickUpDropOff";
 import SearchingRide from "./SearchingRide";

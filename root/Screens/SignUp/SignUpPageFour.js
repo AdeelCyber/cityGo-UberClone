@@ -5,6 +5,7 @@ import {Feather} from "@expo/vector-icons";
 import {AntDesign} from '@expo/vector-icons';
 import React, {useContext, useRef, useState} from "react";
 import * as ImagePicker from "expo-image-picker";
+
 import {RiderModeSignUpContext} from "../../Context/RiderModeSignUpContext";
 import LoadingModel from "../Modal/loadingModel";
 import axios from "axios";
@@ -53,6 +54,7 @@ export default function SignUpPageFour(props) {
 
         }
     };
+    ////////////////////////////////////////////////////////////////////////////////
     const takeSelfie = async () => {
 
         let permission = await ImagePicker.requestCameraPermissionsAsync();
@@ -265,56 +267,56 @@ export default function SignUpPageFour(props) {
     );
     return (
         <BaseRegistration page={4} errors={errors} navigation={props.navigation} setErrors={setErrors} onPress={() => {
-            let error = [];
-            if (!UserData.Validator.isValid(UserData.DriverSignUpData.DriversLicenseExpiry))
-                error.push("Enter a valid  License Expiry Date")
-            if (driverLicense == null)
-                error.push("Please upload your  License Image ")
-            if (selfie == null)
-                error.push("Please upload your selfie ")
-            if (vehicleRegistration == null)
-                error.push("Please upload your vehicle registration documentation ")
-            if (vehiclePic == null)
-                error.push("Please upload your vehicle Image ")
-            if (error.length > 0) {
-                setErrors(error);
-                return;
-            }
-            UserData.addEntry(filed.current)
-            setLoading(true);
-            async function PostData() {
-                await fetch(ApiUrl.signUp, {
-                    method: "POST",
-                    headers: {
-                        Accept: "application/json",
-                        "Content-Type": "multipart/form-data",
-                    },
-                    body: UserData.getFormData()
-                })
-                    .then(response => response.json()
-                    ).then(data => {
-                        if (data.status <= 200) {
-
-                            UserData.ClearForm();
-                            props.navigation.reset({
-                                index: 0,
-                                routes: [{name: 'Finish',
-                                    params: { "status": 'PENDING' }},
-                                ],
-                            })
-
-
-
-                        } else {
-                            setErrors([data.msg]);
-                        }
-                        setLoading(false);
-                    }).catch(err => {
-                        console.log(err.message)
-                        setLoading(false);
+                let error = [];
+                if (!UserData.Validator.isValid(UserData.DriverSignUpData.DriversLicenseExpiry))
+                    error.push("Enter a valid  License Expiry Date")
+                if (driverLicense == null)
+                    error.push("Please upload your  License Image ")
+                if (selfie == null)
+                    error.push("Please upload your selfie ")
+                if (vehicleRegistration == null)
+                    error.push("Please upload your vehicle registration documentation ")
+                if (vehiclePic == null)
+                    error.push("Please upload your vehicle Image ")
+                if (error.length > 0) {
+                    setErrors(error);
+                    return;
+                }
+                UserData.addEntry(filed.current)
+                setLoading(true);
+                async function PostData() {
+                    await fetch(ApiUrl.signUp, {
+                        method: "POST",
+                        headers: {
+                            Accept: "application/json",
+                            "Content-Type": "multipart/form-data",
+                        },
+                        body: UserData.getFormData()
                     })
+                        .then(response => response.json()
+                        ).then(data => {
+                            if (data.status <= 200) {
 
-            }
+                                UserData.ClearForm();
+                                props.navigation.reset({
+                                    index: 0,
+                                    routes: [{name: 'Finish',
+                                        params: { "status": 'PENDING' }},
+                                    ],
+                                })
+
+
+
+                            } else {
+                                setErrors([data.msg]);
+                            }
+                            setLoading(false);
+                        }).catch(err => {
+                            console.log(err.message)
+                            setLoading(false);
+                        })
+
+                }
             console.log(UserData.DriverSignUpData)
             PostData();
 

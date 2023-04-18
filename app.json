@@ -10,9 +10,9 @@
       [
         "expo-image-picker",
         {
+
           "photosPermission": "The app accesses your photos to display on your profile."
         }
-
       ],
       [
         "expo-notifications",
@@ -44,10 +44,7 @@
     },
     "android": {
       "icon": "./assets/notificationIcon.png",
-      "adaptiveIcon": {
-        "foregroundImage":"./assets/notificationIcon.png",
-        "monochromeImage": "./assets/notificationIcon.png"
-      },
+
       "package": "com.lunatech.CityGo",
       "googleServicesFile": "./google-services.json",
       "useNextNotificationsApi": true,

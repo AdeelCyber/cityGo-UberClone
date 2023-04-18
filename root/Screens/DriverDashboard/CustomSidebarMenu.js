@@ -10,6 +10,7 @@ import {SwitchUserContext} from "../../Context/SwitchUserContext";
 import {SessionContext} from "../../Context/SessionContext";
 
 function SideBarButton(props) {
+    props.isSelected = undefined;
     var BackGround = "transparent"
     if (props.isSelected)
         BackGround = "#232323"
