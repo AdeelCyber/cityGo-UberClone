@@ -11,7 +11,7 @@ CITY GO is a ride-hailing app that allows users to book rides, view ride history
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+- [Screenshots](#screenshots)
 - [Contact](#contact)
 
 ## Description
@@ -57,6 +57,9 @@ $ npx expo start
 ````
 5. Change the ServerURL in APIUrls.js to your local django URL
 
+## Usage
+
+
 Install the Expo app on your device (iOS or Android) and scan the QR code to launch the app.
 Usage
 To use CITY GO, follow these steps:
@@ -65,7 +68,8 @@ Launch the app on your device by scanning the QR code.
 Choose your mode (Driver or Rider).
 If you're a Rider, you can book a ride by entering your pickup and dropoff locations.
 If you're a Driver, you can switch on searching mode and wait for ride requests. You will receive a notification when a rider has requested a ride, and you can then accept the ride and chat with the rider during the trip.
-Contributing
+
+## Contributing
 If you would like to contribute to CITY GO, please follow these guidelines:
 
 Fork the repository
@@ -75,7 +79,16 @@ Push to your branch
 Submit a pull request
 Please make sure to run tests and lint the code before submitting your pull request.
 
-Contact
-If you have any questions or comments, please contact me at adil.raja7943@gmail.com .
+## Screenshots
 
+
+![City Go Screenshots](assets/img/CityGoRiderSS.png)
+
+![City Go Screenshots](assets/img/CityGoDriverSS.png)
+
+![City Go Screenshots](assets/img/CityGoDriverSS2.png)
+
+
+## Contact
+If you have any questions or comments, please contact me at adil.raja7943@gmail.com .
 
