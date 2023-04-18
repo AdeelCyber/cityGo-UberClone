@@ -82,11 +82,11 @@ Please make sure to run tests and lint the code before submitting your pull requ
 ## Screenshots
 
 
-![City Go Screenshots](/assets/img/CityGoRiderSS.png)
+![City Go Screenshots](assets/img/CityGoriderSS.png)
 
-![City Go Screenshots](/assets/img/CityGoDriverSS.png)
+![City Go Screenshots](assets/img/CityGodriverSS.png)
 
-![City Go Screenshots](/assets/img/CityGoDriverSS2.png)
+![City Go Screenshots](assets/img/CityGodriverSS2.png)
 
 
 ## Contact
