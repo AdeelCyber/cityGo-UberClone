@@ -221,7 +221,7 @@ export default function Dashboard(props) {
             <View style={[styles.FirstContainer]}>
                 {/*<ImageBackground source={require("../../../assets/img/Rectangle1.png")} style={{paddingVertical:38,padding:18}} resizeMode="stretch" resizeMethod="resize" >*/}
                 <Text style={{color: "rgba(255, 255, 255, 0.71)",fontFamily:"Poppins_400Regular",}}>{appMode.SwitchUserDefaultData.isUserDriver? "Total Earnings": "Your balance"}</Text>
-                <Text style={{color: "white", fontSize: 35, fontWeight: "800",fontFamily:"Poppins_400Regular",}}>{parseFloat(data.wallet).toFixed(2)} R</Text>
+                <Text style={{color: "white", fontSize: 35, fontWeight: "800",fontFamily:"Poppins_400Regular",}}>{parseFloat(data.wallet).toFixed(2)} Rs</Text>
                 <Text style={{color: "#FFFFFF",fontFamily:"Poppins_400Regular",}}>Updated Today</Text>
 
                 {/*</ImageBackground>*/}

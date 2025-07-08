@@ -42,6 +42,7 @@ export default function GetStartedScreen({navigation }) {
         minidisc: {
             fontWeight: "400",
             fontSize: 16,
+            width: 300,
             marginTop: 10,
             fontFamily:"Poppins_400Regular",
             color:"#000000AB",
@@ -75,13 +76,13 @@ export default function GetStartedScreen({navigation }) {
                     Get a cheapest ride to your destination
                 </Text>
                 <Text style={styles.minidisc}>
-                    Get a cheapest ride to your destination
+                    We provide the best service to our customers
                 </Text>
                 <Pressable style={styles.Button}
                 onPress={() => navigation.navigate('LoginScreen')}
 
                 >
-                    <Text style={{color: "white",fontFamily:"Poppins_400Regular",}}>
+                    <Text style={{color: "white",fontFamily:"Poppins_400Regular"}}>
                         Get Started
                     </Text>
                 </Pressable>

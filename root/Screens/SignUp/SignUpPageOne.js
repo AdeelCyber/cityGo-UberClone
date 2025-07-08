@@ -126,8 +126,6 @@ export default function SignUpPageOne(props) {
                 error.push("Enter a valid email")
             if (!UserData.Validator.isPasswordValid())
                 error.push("Enter a valid password")
-            if (!UserData.Validator.isPhoneNoValid())
-                error.push("Enter a valid phone no")
             if (!UserData.Validator.isCityValid())
                 error.push("Please Select a City")
             if (error.length > 0) {

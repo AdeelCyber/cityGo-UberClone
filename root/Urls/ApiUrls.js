@@ -1,6 +1,7 @@
-const Domain = "178.128.50.208:8000"
+const Domain = "192.168.100.16:8000"
 const MainUrl = "http://"+Domain+"/api/"
 const  WsUrl = `ws://${Domain}/`
+
 
 export const ApiUrl = {
     logIn:MainUrl+"logIn",

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Image, Pressable, StyleSheet} from 'react-native';
+import {View, Image, Pressable, StyleSheet, Platform, ToastAndroid} from 'react-native';
 import {StatusBar} from "expo-status-bar";
 import DriverHeader from "../../Components/DriverHeader";
 import ChangeStatus from "../../Components/ChangeStatus";
@@ -10,9 +10,12 @@ import RideInfoBottomSheet from "../../Components/RideInfoBottomSheet";
 import {useContext, useRef, useState} from "react";
 import RideEndedModal from "../Modal/RideEndedModal"
 import TrackingMap from "../Common/TrackinMap";
-import {WsUrls} from "../../Urls/ApiUrls";
+import {ApiUrl, WsUrls} from "../../Urls/ApiUrls";
 import STATUS_CODE from "../../Urls/StatusCode";
 import {RideAcceptedContext} from "../../Context/RideAcceptedContext";
+import AlertIOS from "react-native/Libraries/Alert/Alert";
+import * as Location from "expo-location";
+import {SessionContext} from "../../Context/SessionContext";
 
 //create your forceUpdate hook
 function useForceUpdate() {
@@ -26,6 +29,8 @@ export default function DriverDashboard({navigation}) {
     const [modalVisible, setModalVisible] = useState(false);
     const [isOPen, setOpen] = useState(true);
     const ride = useContext(RideAcceptedContext);
+
+    const Session = useContext(SessionContext);
 
     const ButtonSize = 47;
     const styles = StyleSheet.create({
@@ -60,8 +65,47 @@ export default function DriverDashboard({navigation}) {
     const forceUpdate = useForceUpdate();
 
     function setModalVisible2(props) {
-        alert(ride.RideData.id)
-        // navigation.navigate("Ride Detail",{id:ride.RideData.id});
+
+        navigation.navigate("Ride Detail",{id:ride.RideData.id});
+    }
+    async function getCurrentLocation() {
+        let {status} = await Location.requestForegroundPermissionsAsync();
+
+        if (status !== "granted") {
+            alert("Permission not granted", "Allow the app to use location service.", [{text: "OK"}], {cancelable: false});
+            return null;
+        }
+
+        let {coords} = await Location.getCurrentPositionAsync();
+        if (coords) {
+            const {latitude, longitude} = coords;
+            return new Object({
+                lat: latitude,
+                long: longitude,
+            })
+        }
+    }
+    async function rideAccepted(data) {
+        let loc = await getCurrentLocation();
+        await fetch(ApiUrl.rideAccepted, {
+            method: "POST",
+            headers: {
+                Accept: "application/json",
+                'Content-Type': 'application/json',
+                Authorization: "Token " + Session.SessionData.Token,
+            },
+            body: JSON.stringify({
+                ...data,
+                ...loc
+            }),
+        }).then(response => response.json()).then((data) => {
+            ride.setData(data.msg);
+
+        }).catch((error) => {
+            if (Platform.OS === 'android') {
+                ToastAndroid.show('Something went wrong', ToastAndroid.SHORT);
+            }
+        })
     }
 
 
@@ -75,11 +119,12 @@ export default function DriverDashboard({navigation}) {
                     "GroupId": ride.RideData.groupId + JSON.stringify(ride.RideData.id),
                 })
             );
+            console.log("==============",times)
             webSocket.send(
                 JSON.stringify({
                     "status": STATUS_CODE.CHANGE_ONGOING_RIDE_STATUS,
                     "time": new Date().getTime(),
-                    "rideTime":times.time,
+                    "rideTime":times.time || 0,
                     "distance":distances.distance
                 })
             )

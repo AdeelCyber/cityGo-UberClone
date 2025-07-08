@@ -94,23 +94,23 @@ export default function SignUpPageTwo(props) {
 
                 <TitleSubTitle mainTitile={"Vehicle Details"} subTitle={"Enter your vehicle details."}/>
 
-                <View style={styles.InputSection}>
-                    <View>
-                        <FontAwesome5 name="car" size={24} color="black"/>
-                    </View>
-                    <Picker
-                        selectedValue={VehicleType}
-                        style={{height: 50, width: "90%"}}
-                        onValueChange={(itemValue, itemIndex) => {
-                            UserData.addEntry({vehicleType: itemValue})
-                            setVehicleType(itemValue)
-                        }}
-                    >
-                        {VehicleType.length === 0 ? <Picker.Item label="Vehicle Type" value=""/> : null}
-                        <Picker.Item label="City Go - EXPRESS" value="City Go"/>
-                        <Picker.Item label="Go Ride - VALUED" value="Go"/>
-                    </Picker>
-                </View>
+                {/*<View style={styles.InputSection}>*/}
+                {/*    <View>*/}
+                {/*        <FontAwesome5 name="car" size={24} color="black"/>*/}
+                {/*    </View>*/}
+                {/*    <Picker*/}
+                {/*        selectedValue={VehicleType}*/}
+                {/*        style={{height: 50, width: "90%"}}*/}
+                {/*        onValueChange={(itemValue, itemIndex) => {*/}
+                {/*            UserData.addEntry({vehicleType: itemValue})*/}
+                {/*            setVehicleType(itemValue)*/}
+                {/*        }}*/}
+                {/*    >*/}
+                {/*        {VehicleType.length === 0 ? <Picker.Item label="Vehicle Type" value=""/> : null}*/}
+                {/*        <Picker.Item label="City Go - EXPRESS" value="City Go"/>*/}
+                {/*        <Picker.Item label="Go Ride - VALUED" value="Go"/>*/}
+                {/*    </Picker>*/}
+                {/*</View>*/}
                 <View style={styles.InputSection}>
                     <MaterialCommunityIcons name="car-side" size={24} color="black" />
                     <TextInput
@@ -148,7 +148,7 @@ export default function SignUpPageTwo(props) {
                     />
                 </View>
                 <View style={styles.InputSection}>
-                    <Ionicons name="ios-color-palette" size={24} color="black"/>
+                    <Ionicons name="color-palette" size={24} color="black"/>
                     <Picker
                         selectedValue={VehicleColor}
                         style={{height: 50, width: "90%"}}

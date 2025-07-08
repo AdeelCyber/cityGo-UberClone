@@ -46,6 +46,9 @@ export default function SessionProvider({children}) {
 
         } )
 
+    }
+    function checkConfirmation() {
+        return true
 
 
     }
@@ -73,10 +76,16 @@ export default function SessionProvider({children}) {
         addEntry: addEntry,
         ClearSession: ClearSession,
     }
+    useEffect(() => {
+        checkConfirmation()
+    }, []);
 
 
     return (
-        <SessionContext.Provider value={value}>
+        <SessionContext.Provider value={value}
+
+
+        >
             {children}
         </SessionContext.Provider>
 

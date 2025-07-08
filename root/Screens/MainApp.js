@@ -250,6 +250,8 @@ export default function MainApp(props) {
                 await SplashScreen.preventAutoHideAsync();
 
                 await Font.loadAsync(fonts);
+                setAppIsReady(true)
+
 
 
             } catch (e) {
@@ -261,7 +263,6 @@ export default function MainApp(props) {
 
         await getSessionData().then(r => {
             // alert("setting AppReady TRUE")
-            setAppIsReady(true)
         })
         getNotificationData()
 
@@ -280,6 +281,7 @@ export default function MainApp(props) {
     }, [appIsReady]);
 
     if (!appIsReady) {
+
         return null;
     }
 

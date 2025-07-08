@@ -26,7 +26,9 @@ export default function UploadPicModal(props) {
         console.log(result);
 
         if (!result.cancelled) {
+            result = result.assets[0];
             SetDP(result.uri);
+
             props.setModalVisible(false);
             props.setImage(result.uri)
         }
@@ -43,6 +45,7 @@ export default function UploadPicModal(props) {
         console.log(result);
 
         if (!result.cancelled) {
+            result=result.assets[0];
             SetDP(result.uri);
             props.setModalVisible(false);
             props.setImage(result.uri)

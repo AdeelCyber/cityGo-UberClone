@@ -207,9 +207,20 @@ export default function LoginScreen(props) {
             <View style={styles.container}>
 
                 <View style={styles.flex}>
-                    <View style={{marginTop: 62, justifyContent: "center", alignItems: "center"}}>
+                    <View style={{marginTop: 62, justifyContent: "center", alignItems: "center",display:"flex",flexDirection:"row",gap:10}}>
 
-                        <Image source={require("../../assets/logo/logo.png")} style={styles.logo}/>
+                        {/*<Image source={require("../../assets/logo/logo.png")} style={styles.logo}/>*/}
+                        <Text style={{
+                            fontSize: 40,
+                            fontWeight: "bold",
+
+                        }}>Q</Text>
+                        <Text style={{
+                            fontSize: 40,
+                            fontWeight: "bold",
+                            color:"gold"
+
+                        }}>Drive</Text>
                     </View>
 
                     <Text style={styles.greetings}>

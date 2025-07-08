@@ -344,7 +344,7 @@ export default function SelectRide(props) {
 
                                     }}/>
                                     <Text style={[styles.title, {marginTop: 10, fontWeight: "500"}]}>
-                                        {fare} R
+                                        {fare} Rs
                                     </Text>
                                 </View>
 

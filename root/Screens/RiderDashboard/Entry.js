@@ -14,7 +14,6 @@ import ChangePhone from "../Settings/ChangePhone";
 import Dashboard from "../DriverDashboard/Dashboard";
 import ChangeCity from "../Settings/ChangeCity";
 import RiderMap from "./RiderMap";
-import MapScreen from "../../../../../DonnwellUser/root/Screens/Maps/MapScreen";
 import GooglePlacesInput from "../../Components/User/GooglePlaceInput";
 import PickUpDropOffProvider from "../../Context/PickUpDropOff";
 import SearchingRide from "./SearchingRide";
@@ -22,6 +21,7 @@ import OngoingRide from "./OngoingRide";
 import RideAcceptedProvider from "../../Context/RideAcceptedContext";
 import MapEntryRider from "./MapEntryRider";
 import ChangeName from "../Settings/ChangeName";
+import MapScreen from "../Maps/MapScreen";
 
 const Drawer = createDrawerNavigator();
 

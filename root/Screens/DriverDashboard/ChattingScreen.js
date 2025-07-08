@@ -395,7 +395,7 @@ class ChattingScreenContext extends React.Component {
                     <Pressable
                         onPress={() => this.sendMessage()}
                         style={{padding: 10, marginStart: 5, marginEnd: 10,}}>
-                        <Ionicons name="ios-send" size={24} color="white"/>
+                        <Ionicons name="send" size={24} color="white"/>
                     </Pressable>
                 </View>
 

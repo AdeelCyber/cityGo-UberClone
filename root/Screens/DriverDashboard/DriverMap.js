@@ -185,7 +185,6 @@ export default function DriverMap({navigation}) {
                                     return <RideRequest navigation={navigation} time={30} data={item} key={index}
                                                         onAccept={(data) => {
                                                             rideAccepted(data);
-
                                                         }
                                                         }/>
                                 })

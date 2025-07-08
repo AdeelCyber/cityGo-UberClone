@@ -38,9 +38,13 @@ export default function SignUpPageFour(props) {
         });
 
         if (!result.cancelled) {
-            setDriverLicense(result.uri);
             var dataCopy = Object.assign({}, filed.current);
-            const newImageUri = "file:///" + result.uri.split("file:/").join("");
+            console.log(result)
+            result = result.assets[0]
+            const newImageUri = "file:/" + result.uri.split("file:/").join("");
+            console.log(newImageUri)
+            setDriverLicense(newImageUri);
+
 
             dataCopy.DriversLicenseImg =
 
@@ -67,10 +71,10 @@ export default function SignUpPageFour(props) {
 
 
         if (!result.cancelled) {
-            setSelfie(result.uri);
+            result = result.assets[0]
             var dataCopy = Object.assign({}, filed.current);
-            const newImageUri = "file:///" + result.uri.split("file:/").join("");
-
+            const newImageUri = "file:/" + result.uri.split("file:/").join("");
+            setSelfie(newImageUri);
             dataCopy.selfie =
 
                 {
@@ -93,9 +97,10 @@ export default function SignUpPageFour(props) {
 
 
         if (!result.cancelled) {
-            setVehicleRegistration(result.uri);
+            result = result.assets[0]
             var dataCopy = Object.assign({}, filed.current);
-            const newImageUri = "file:///" + result.uri.split("file:/").join("");
+            const newImageUri = "file:/" + result.uri.split("file:/").join("");
+            setVehicleRegistration(newImageUri);
 
             dataCopy.vehicalRegisterationDocs =
 
@@ -118,9 +123,10 @@ export default function SignUpPageFour(props) {
 
 
         if (!result.cancelled) {
-            setVehiclePic(result.uri);
+            result = result.assets[0]
             var dataCopy = Object.assign({}, filed.current);
-            const newImageUri = "file:///" + result.uri.split("file:/").join("");
+            const newImageUri = "file:/" + result.uri.split("file:/").join("");
+            setVehiclePic(newImageUri);
 
             dataCopy.vehicalPicture =
 

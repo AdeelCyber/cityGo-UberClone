@@ -108,7 +108,10 @@ export default function RideHistoryCard(props) {
     });
     function toMonthName(monthNumber) {
         const date = new Date();
+        console.log("MONTH NUMBER", monthNumber)
         date.setMonth(monthNumber - 1);
+        console.log("DATE", date)
+
 
         return date.toLocaleString('en-US', {
             month: 'long',
@@ -132,11 +135,12 @@ export default function RideHistoryCard(props) {
         return time.join('');
     }
 
-
+    console.log("CREATION DATE", data.creationDate)
     let year = data.creationDate.split("-")[0]
     let month = data.creationDate.split("-")[1]
+    console.log("MONTH", month)
     let m = parseInt(month)
-    month = toMonthName(m).split(" ")[1]
+    month = toMonthName(m)
 
     let d = data.creationDate.split("-")[2]
     let day = d.substring(0,2)

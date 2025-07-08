@@ -168,7 +168,7 @@ export default function RideDetailScreen(props) {
                 let year = data.ride.creationDate.split("-")[0]
                 let month = data.ride.creationDate.split("-")[1]
                 let m = parseInt(month)
-                month = toMonthName(m).split(" ")[1]
+                month = toMonthName(m)
 
                 let d = data.ride.creationDate.split("-")[2]
                 let day = d.substring(0,2)

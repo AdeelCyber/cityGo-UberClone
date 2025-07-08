@@ -96,7 +96,7 @@ export default function BaseRegistration(props) {
                     </Pressable>
                     <View style={{flex: 1,justifyContent:"center",alignItems:"center"}}>
 
-                        <Image source={require("../../../assets/logo/logo.png")} style={styles.logo}/>
+                        {/*<Image source={require("../../../assets/logo/logo.png")} style={styles.logo}/>*/}
                     </View>
                 </View>
                 { appMode.SwitchUserDefaultData.isUserDriver?

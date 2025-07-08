@@ -43,7 +43,7 @@ export  default  function DriverHeader(props){
     return(
         <View style={[styles.container,props.style]}>
             <Pressable onPress={()=>props.navigation.openDrawer()} style={styles.circle}>
-                <Ionicons name="ios-menu-outline" size={24} color="black" />
+                <Ionicons name="menu" size={24} color="black" />
             </Pressable>
             <View style={{flex:1}} />
             <Pressable onPress={()=>{

@@ -455,7 +455,7 @@ export default function Profile(props) {
                     borderRadius: 9,
                     height: 45
                 }}>
-                    <Ionicons name="ios-color-palette" size={24} color="black"/>
+                    <Ionicons name="color-palette" size={24} color="black"/>
                     </View>
 
                     <Text style={styles.pressableText}>{vehicle.Color}</Text>

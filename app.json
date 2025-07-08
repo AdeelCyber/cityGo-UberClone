@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "City Go",
+    "name": "Q Drive",
     "slug": "citygo-dev",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,7 +10,6 @@
       [
         "expo-image-picker",
         {
-
           "photosPermission": "The app accesses your photos to display on your profile."
         }
       ],
@@ -20,7 +19,9 @@
           "icon": "./assets/notificationIcon.png",
           "color": "#ffffff"
         }
-      ]
+      ],
+      "expo-font",
+      "expo-secure-store"
     ],
     "splash": {
       "image": "./assets/logo_sp1.png",
@@ -35,7 +36,6 @@
     ],
     "ios": {
       "icon": "./assets/notificationIcon.png",
-
       "supportsTablet": true,
       "bundleIdentifier": "com.lunatech.CityGo",
       "config": {
@@ -44,7 +44,6 @@
     },
     "android": {
       "icon": "./assets/notificationIcon.png",
-
       "package": "com.lunatech.CityGo",
       "googleServicesFile": "./google-services.json",
       "useNextNotificationsApi": true,
